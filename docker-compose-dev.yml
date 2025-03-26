@@ -1,0 +1,40 @@
+
+
+#This is a Docker Compose file (docker-compose.yml) for running a FastAPI application (api service) 
+#with a PostgreSQL database (postgres service) in a containerized environment.
+
+
+version: "3.8"
+services:
+  api:
+    build: .
+    command: uvicorn app.main2:app --host 0.0.0.0 --port 8000 --reload
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    # env_file:
+    #   - ./.env
+    environment:
+      DATABASE_HOSTNAME: postgres
+      DATABASE_PORT: 5432
+      DATABASE_PASSWORD: admin
+      DATABASE_NAME: fastapi
+      DATABASE_USERNAME: postgres
+      SECRET_KEY: 09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 60
+
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: fastapi    
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-db:/var/lib/postgresql/data  
+
+volumes:
+  postgres-db:

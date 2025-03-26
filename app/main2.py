@@ -13,7 +13,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Hello byddy go learn from mistake"}
+    return {"message": "Hello byddy go learn from mistakeeeeeeee"}
 
 origins = ['https://www.google.com']
 

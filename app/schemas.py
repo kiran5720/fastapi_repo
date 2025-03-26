@@ -1,5 +1,5 @@
 
-from pydantic import BaseModel,EmailStr
+from pydantic import BaseModel,EmailStr,ConfigDict
 from datetime import datetime
 from typing import Optional
 from pydantic.types import conint
@@ -9,8 +9,9 @@ class UserOut(BaseModel):
     email:EmailStr
     created_at: datetime
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+    # class Config:
+    #     from_attributes = True
 
 
 class PostBase(BaseModel):
@@ -29,15 +30,17 @@ class Post(PostBase):
     owner_id : int
     owner : UserOut
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+    # class Config:
+    #     from_attributes = True
 
 class PostOut(BaseModel):
     Post : Post
     votes: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
+    # class Config:
+    #     from_attributes = True
 
 class UserCreate(BaseModel):
     email: EmailStr
