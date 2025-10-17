@@ -15,6 +15,10 @@ app = FastAPI()
 async def root():
     return {"message": "Hello byddy go learn from mistakeeeeeeee"}
 
+@app.get("/to_see_git")
+async def root2():
+    return {"message": "Hello byddy i changed something in code"}
+
 origins = ['https://www.google.com']
 
 app.add_middleware(
