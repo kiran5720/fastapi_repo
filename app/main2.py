@@ -17,7 +17,7 @@ async def root():
 
 @app.get("/to_see_git")
 async def root2():
-    return {"message": "Hello byddy i changed something in code"}
+    return {"message": "Hello byddy i changed something new in code"}
 
 origins = ['https://www.google.com']
 
