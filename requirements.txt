@@ -4,42 +4,54 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-astropy==6.0.1
+annotated-types==0.7.0
+    # via pydantic
+anyio==4.11.0
+    # via starlette
+click==8.3.0
+    # via uvicorn
+colorama==0.4.6
     # via
-    #   -r requirements.in
-    #   pyuvdata
-astropy-iers-data==0.2025.2.3.0.32.42
-    # via astropy
-docstring-parser==0.16
-    # via pyuvdata
-h5py==3.12.1
-    # via pyuvdata
-numpy==1.26.4
-    # via
-    #   -r requirements.in
-    #   astropy
-    #   h5py
-    #   pyerfa
-    #   pyuvdata
-    #   scipy
-packaging==24.2
-    # via
-    #   astropy
-    #   setuptools-scm
-pyerfa==2.0.1.5
-    # via
-    #   astropy
-    #   pyuvdata
-pyuvdata==2.4.3
+    #   click
+    #   pytest
+fastapi==0.119.1
     # via -r requirements.in
-pyyaml==6.0.2
-    # via astropy
-scipy==1.12.0
+greenlet==3.2.4
+    # via sqlalchemy
+h11==0.16.0
+    # via uvicorn
+idna==3.11
+    # via anyio
+iniconfig==2.3.0
+    # via pytest
+packaging==25.0
+    # via pytest
+pluggy==1.6.0
+    # via pytest
+pydantic==2.12.3
+    # via fastapi
+pydantic-core==2.41.4
+    # via pydantic
+pygments==2.19.2
+    # via pytest
+pytest==8.4.2
+    # via -r requirements.in
+sniffio==1.3.1
+    # via anyio
+sqlalchemy==2.0.44
+    # via -r requirements.in
+starlette==0.48.0
+    # via fastapi
+typing-extensions==4.15.0
     # via
-    #   -r requirements.in
-    #   pyuvdata
-setuptools-scm==8.1.0
-    # via pyuvdata
-
-# The following packages are considered to be unsafe in a requirements file:
-# setuptools
+    #   anyio
+    #   fastapi
+    #   pydantic
+    #   pydantic-core
+    #   sqlalchemy
+    #   starlette
+    #   typing-inspection
+typing-inspection==0.4.2
+    # via pydantic
+uvicorn==0.38.0
+    # via -r requirements.in
