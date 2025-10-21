@@ -52,6 +52,9 @@ pydantic-core==2.14.6
 pygments==2.17.2
     # via pytest
 
+psycopg2-binary==2.9.9
+    # via database connection for PostgreSQL
+    
 pytest==7.4.4
     # via -r requirements.in
 
