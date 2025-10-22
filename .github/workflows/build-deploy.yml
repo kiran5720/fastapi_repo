@@ -8,10 +8,10 @@ jobs:
       name: testing
 
     env:
-      DATABASE_HOSTNAME: ${{ secrets.DATABASE_HOSTNAME }}
-      DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
+      DATABASE_HOSTNAME: localhost
+      DATABASE_PORT: 5432
       DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}_test  # Add _test suffix here
+      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
       DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
       secret_key: ${{ secrets.secret_key }}
       ALGORITHM: ${{ secrets.ALGORITHM }}
@@ -58,7 +58,7 @@ jobs:
       - name: Wait for Postgres to be ready
         run: |
           echo "⏳ Waiting for Postgres to be ready..."
-          until pg_isready -h $DATABASE_HOSTNAME -p $DATABASE_PORT -U $DATABASE_USERNAME; do
+          until pg_isready -h localhost -p 5432 -U $DATABASE_USERNAME; do
             sleep 2
           done
           echo "✅ Postgres is ready!"
