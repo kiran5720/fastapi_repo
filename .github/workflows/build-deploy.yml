@@ -101,12 +101,13 @@ jobs:
       - name: pulling git repo
         uses: actions/checkout@v2
         
-      - name: deploy to ubuntu
+      - name: Deploy via SSH
         uses: appleboy/ssh-action@master
         with:
-          host: ${{ secrets.PROD_HOST}}
-          username: ${{secrets.PROD_USERNAME}}  
-          password: ${{secrets.PROD_PASSWORD}}
+          host: ${{ secrets.PROD_HOST }}
+          username: ${{ secrets.PROD_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
           script: |
             cd app/src
             git pull
