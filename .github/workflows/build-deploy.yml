@@ -61,7 +61,7 @@ jobs:
           until pg_isready -h localhost -p 5432 -U $DATABASE_USERNAME; do
             sleep 2
           done
-          echo "✅ Postgres is ready!"
+          echo "✅ Postgres is readyy!"
 
       - name: Run tests with pytest
         run: |
