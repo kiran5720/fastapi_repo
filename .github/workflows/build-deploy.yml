@@ -11,7 +11,7 @@ jobs:
       DATABASE_HOSTNAME: ${{ secrets.DATABASE_HOSTNAME }}
       DATABASE_PORT: ${{ secrets.DATABASE_PORT }}
       DATABASE_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
-      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}
+      DATABASE_NAME: ${{ secrets.DATABASE_NAME }}_test  # Add _test suffix here
       DATABASE_USERNAME: ${{ secrets.DATABASE_USERNAME }}
       secret_key: ${{ secrets.secret_key }}
       ALGORITHM: ${{ secrets.ALGORITHM }}
@@ -52,7 +52,7 @@ jobs:
       - name: Debug database info
         run: |
           echo "Database Host: $DATABASE_HOSTNAME"
-          echo "Database Name: ${DATABASE_NAME}_test"
+          echo "Database Name: $DATABASE_NAME"
           echo "Database Port: $DATABASE_PORT"
 
       - name: Wait for Postgres to be ready
