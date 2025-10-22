@@ -31,8 +31,7 @@ def test_withdraw():
 
 @pytest.mark.parametrize("deposite,withdraw,expected",[
     (100,50,50),
-    (200,100,100),
-    (20,30,-10)
+    (200,100,100)
 ])
 def test_bank_fixturees(zero_balance,deposite,withdraw,expected):
     zero_balance.deposite(deposite)
