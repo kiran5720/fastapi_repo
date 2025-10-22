@@ -17,7 +17,7 @@ print("Port:", settings.database_port)
 print("User:", settings.database_username)
 print("DB Name:", settings.database_name)
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"
+SQLALCHEMY_DATABASE_URL = f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}_test"
 
 #SQLALCHEMY_DATABASE_URL = f"postgresql://fastapi_4m1f_user:2M8JlwKhePY5oi8Om1QFbbk1bmqLyQpx@dpg-cuhnjqlumphs73fn52hg-a.oregon-postgres.render.com/fastapi_4m1f"
 
